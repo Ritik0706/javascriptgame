@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Js Game</title>
+	</head>
+	<style>
+		body {
+			overflow: hidden;
+			background-color: black;
+			color: white;
+			font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+			text-align: center;
+		}
+		canvas {
+			border: 1px solid white;
+			width: 100%;
+		}
+		* {
+			user-select: none;
+		}
+
+		/* Code POP */
+		.popup {
+			display: none;
+			position: fixed;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+			background-color: rgba(255, 255, 255, 1);
+			width: 60%;
+			max-width: 260px;
+			padding: 20px;
+			border-radius: 10px;
+			z-index: 1000;
+			text-align: center;
+		}
+
+		.popup-content {
+			color: black;
+			font-size: 24px;
+		}
+
+		.popup-content h2 {
+			font-size: 28px;
+		}
+
+		.popup img {
+			display: block;
+			margin: 0 auto;
+			width: 100px;
+			height: auto;
+			margin-bottom: 20px;
+		}
+
+		.close-button {
+			background-color: #007bff;
+			color: #fff;
+			border: none;
+			padding: 10px 20px;
+			border-radius: 5px;
+			cursor: pointer;
+			width: 90px;
+			font-size: large;
+		}
+
+		.close-button:hover {
+			background-color: #0056b3; /* Darker blue on hover */
+		}
+	</style>
+	<body>
+		<div id="winnerPopup" class="popup">
+			<div class="popup-content">
+				<img src="WinImage.gif" alt="Winning Image" />
+				<h2>Congratulations..</h2>
+				<h2 id="winnerText"></h2>
+				<button id="winnerClose" class="close-button">Close</button>
+			</div>
+		</div>
+		<div id="gameOverPopup" class="popup">
+			<div class="popup-content">
+				<img src="Paw.gif" alt="Game Over Image" />
+				<h2>Game Over...</h2>
+				<button id="gameOverClose" class="close-button">Close</button>
+			</div>
+		</div>
+
+		<h1>Simple Javascript Game</h1>
+		<p>
+			Click left and Right Arrow Key on to move your player. Try to reach the
+			goal without caught by the enemies.
+		</p>
+		<canvas id="mycanvas" width="640" height="236"></canvas>
+		<script src="script.js"></script>
+		<script>
+			document.addEventListener('DOMContentLoaded', function () {
+				var winnerCloseButton = document.getElementById('winnerClose');
+				var gameOverCloseButton = document.getElementById('gameOverClose');
+				var winnerPopup = document.getElementById('winnerPopup');
+				var gameOverPopup = document.getElementById('gameOverPopup');
+
+				winnerCloseButton.addEventListener('click', function () {
+					winnerPopup.style.display = 'none';
+				});
+
+				gameOverCloseButton.addEventListener('click', function () {
+					gameOverPopup.style.display = 'none';
+				});
+			});
+		</script>
+	</body>
+</html>
