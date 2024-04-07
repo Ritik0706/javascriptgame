@@ -108,11 +108,17 @@ window.addEventListener("load", function () {
 
     winnerCloseButton.addEventListener('click', function () {
         winnerPopup.style.display = 'none';
+        player.isMovingLeft = false;
+        player.isMovingRight = false;
+        player.isMoving = false;
         gamestate = true; // Start the game again
     });
 
     gameOverCloseButton.addEventListener('click', function () {
         gameOverPopup.style.display = 'none';
+        player.isMovingLeft = false;
+        player.isMovingRight = false;
+        player.isMoving = false;
         gamestate = true; // Start the game again
     });
 
@@ -120,9 +126,15 @@ window.addEventListener("load", function () {
         if (event.key === "Enter") {
             if (winnerPopup.style.display === 'block') {
                 winnerPopup.style.display = 'none';
+                player.isMovingLeft = false;
+                player.isMovingRight = false;
+                player.isMoving = false;
                 gamestate = true; // Start the game again
             } else if (gameOverPopup.style.display === 'block') {
                 gameOverPopup.style.display = 'none';
+                player.isMovingLeft = false;
+                player.isMovingRight = false;
+                player.isMoving = false;
                 gamestate = true; // Start the game again
             }
         }
