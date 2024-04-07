@@ -210,7 +210,7 @@ window.addEventListener("load", function () {
                         }
 
                         level = 1;
-                        life = 6;
+                        life = 5;
                         player.speedX = 2;
                     }
 
